@@ -1,4 +1,4 @@
-package com.hillel.project1;
+package hillel.logger;
 
 public class Logger {
     public static final String ANSI_GREEN = "\u001B[32m";
