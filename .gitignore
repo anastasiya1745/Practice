@@ -14,7 +14,7 @@ HELP.mdtarget/!.mvn/wrapper/maven-wrapper.jar!**/src/main/**/target/!**/src/test
 *.jar
 *.war
 *.nar
-*.ear
+
 *.zip
 
 
