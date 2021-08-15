@@ -1,16 +1,22 @@
 package hillel.hw8;
 
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class PokerAction {
-    private static int numOfCards = 52;
+
+
+    private static int numOfCards= 52;
+
     private static int numOfPlayer = 4;
+
+
 
     private Cards[] deck = new Cards[numOfCards];
 
 
-    public   void createDeck() {
+    public   void createDeck() throws Exception {
 
         String[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
         String[] suites = {"Hearts", " Cubs", "Diamonds", "Spades"};
@@ -19,7 +25,11 @@ public class PokerAction {
              for (String value: values) {
             deck[count++] = new Cards(value, suite);
              }
+
+
+
          }
+
        }
     public void shuffleDeck() {
         Random random = new Random();
@@ -29,6 +39,7 @@ public class PokerAction {
             Cards card = deck[in];
             deck[in] = deck[out];
             deck[out] = card;
+
         }
     }
     public void serveDeck() {
@@ -46,4 +57,27 @@ public class PokerAction {
 
         System.out.println("\n");
     }
-}}
+
+
+}
+    public void setNumOfCards(int numOfCards) {
+        if (numOfCards <=0)
+        {
+            throw new IllegalArgumentException("Must be >0");
+        }
+        else if (numOfCards >=53){
+            throw new ArrayIndexOutOfBoundsException("Must be till 52");
+        }
+        this.numOfCards = numOfCards;
+    }
+    public  void setNumOfPlayer(int numOfPlayer) {
+        if (numOfPlayer <=0)
+        {
+            throw new IllegalArgumentException("Must be >0");
+        }
+        this.numOfPlayer = numOfPlayer;
+
+}
+
+
+}
