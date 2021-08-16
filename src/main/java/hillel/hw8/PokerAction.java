@@ -26,7 +26,14 @@ public class PokerAction {
             deck[count++] = new Cards(value, suite);
              }
 
-
+             if (numOfCards <=0)
+             {
+                 throw new IllegalArgumentException("Must be >0");
+             }
+             else if (numOfCards >=53){
+                 throw new ArrayIndexOutOfBoundsException("Must be till 52");
+             }
+             this.numOfCards = numOfCards;
 
          }
 
@@ -49,7 +56,11 @@ public class PokerAction {
         for (int round=1; round<=5; round++) {
             for (int playerOfGame = 1; playerOfGame <= numOfPlayer; playerOfGame++){
             Cards card = deck[k++];
-
+                if (numOfPlayer <=0)
+                {
+                    throw new IllegalArgumentException("Must be >0");
+                }
+                this.numOfPlayer = numOfPlayer;
 
 
             System.out.printf("Player %d gets %s%n",playerOfGame , card);
@@ -59,25 +70,10 @@ public class PokerAction {
     }
 
 
-}
-    public void setNumOfCards(int numOfCards) {
-        if (numOfCards <=0)
-        {
-            throw new IllegalArgumentException("Must be >0");
-        }
-        else if (numOfCards >=53){
-            throw new ArrayIndexOutOfBoundsException("Must be till 52");
-        }
-        this.numOfCards = numOfCards;
     }
-    public  void setNumOfPlayer(int numOfPlayer) {
-        if (numOfPlayer <=0)
-        {
-            throw new IllegalArgumentException("Must be >0");
-        }
-        this.numOfPlayer = numOfPlayer;
+
+
 
 }
 
 
-}
