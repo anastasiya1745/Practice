@@ -9,13 +9,15 @@ import org.testng.annotations.BeforeClass;
  * @author Anastasiia Chaika
  */
 public class BaseTest {
-    protected WebDriver driver = new ChromeDriver();
-
+    WebDriver driver;
     @BeforeClass
     public void beforeClass(){
-      WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
     }
-   @AfterClass
-    public void afterClass(){driver.quit();}
+   @AfterClass(alwaysRun = true)
+    public void afterClass(){
+        driver.quit();
+    }
 
 }
