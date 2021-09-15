@@ -13,7 +13,8 @@ public class testPOHW21 extends BaseTest{
     public void showUsername()  {
         driver.get("https://the-internet.herokuapp.com");
         MainPage mainPage = new MainPage(driver);
-        mainPage.toNavHoverPage().AdditionalInfo();
+        mainPage.toNavHoverPage().Username1().Username2().Username3();
+
 
     }
     @Test
