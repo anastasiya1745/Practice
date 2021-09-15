@@ -16,6 +16,19 @@ public class MainPage extends BasePage  {
         driver.findElement(By.linkText("Hovers")).click();
         return new HoverPage(driver);
     }
+    public GeoLocationPage toNavGeoLocationPage(){
+        driver.findElement(By.linkText("Geolocation")).click();
+        return new GeoLocationPage(driver);
+    }
+    public LoginPage toNavLoginPage(){
+        driver.findElement(By.linkText("Form Authentication")).click();
+        return new LoginPage(driver);
+    }
+    public ChallengeDomPage toNavсhallengeDomPage(){
+        driver.findElement(By.linkText("Challenging DOM")).click();
+        return new ChallengeDomPage(driver);
+    }
+
 
 
 
