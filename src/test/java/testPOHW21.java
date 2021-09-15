@@ -12,8 +12,6 @@ public class testPOHW21 extends BaseTest{
         MainPage mainPage = new MainPage(driver);
         mainPage.toNavHoverPage().AdditionalInfo();
 
-
-
     }
 
 
