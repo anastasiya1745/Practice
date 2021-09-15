@@ -40,5 +40,12 @@ public class testPOHW21 extends BaseTest{
         mainPage.toNavLoginPage().setUsername("ffj").setPassword("sfsj!").clickOnSubmit().readMsgNegativeLogin("Your username is invalid!");
 
     }
+    @Test
+    public void challengeDom(){
+        driver.get("https://the-internet.herokuapp.com");
+        MainPage mainPage = new MainPage(driver);
+        mainPage.toNavсhallengeDomPage().clickButton1().clickButton2().clickButton3().readShowColumn();
+
+    }
 
 }
