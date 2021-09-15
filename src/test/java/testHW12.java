@@ -1,5 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +17,7 @@ public class testHW12 extends BaseTest {
                 driver.findElement(By.xpath("//a[@class='button']")).click();
                 driver.findElement(By.xpath("//a[@class='button alert']")).click();
                 driver.findElement(By.xpath("//a[@class='button success']")).click();
-                Thread.sleep(1000);
+
                 System.out.println(driver.findElement(By.xpath("//tr[1]/td[4]")).getText());
                 System.out.println(driver.findElement(By.xpath("//tr[2]/td[4]")).getText());
                 System.out.println(driver.findElement(By.xpath("//tr[3]/td[4]")).getText());
@@ -46,13 +48,14 @@ public class testHW12 extends BaseTest {
                 driver.findElement(By.xpath("//button[@type='submit']")).click();
                 driver.findElement(By.xpath("//div[@class='flash error']")).getText().contains("Your username is invalid!");
 
+
         }
         @Test
         public void geolocation() throws InterruptedException {
                 driver.get("https://the-internet.herokuapp.com/geolocation");
                 driver.findElement(By.cssSelector("div.example button")).click();
-                Thread.sleep(1000);
-
+               // Thread.sleep(1000);
+                wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='map-link']")));
                 String a = driver.findElement(By.xpath("//div[@id='lat-value']")).getText();
                 String b = driver.findElement(By.xpath("//div[@id='long-value']")).getText();
                 System.out.println("Latitude: "+a);
