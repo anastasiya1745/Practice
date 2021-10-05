@@ -1,9 +1,6 @@
-import hillel.PageObject.HoverPage;
+package hillel;
+
 import hillel.PageObject.MainPage;
-import hillel.PageObject.SecurePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class testPOHW21 extends BaseTest{

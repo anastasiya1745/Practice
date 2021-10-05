@@ -1,3 +1,5 @@
+package hillel;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,11 +17,14 @@ public class BaseTest {
     @BeforeClass
     public void beforeClass(){
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        this.driver = DriverSingleton.getDriver();
         wait = new WebDriverWait(driver, 10);
+
     }
    @AfterClass(alwaysRun = true)
     public void afterClass(){
+
+
         driver.quit();
     }
 
