@@ -12,12 +12,13 @@ public class TestFile extends BaseTest {
     public void ActionFile() throws InterruptedException {
 
         downloadFile downloadFile = new downloadFile(driver);
-        downloadFile.actionDownload();
         modifyFile modifyFile = new modifyFile(driver);
-        modifyFile.actionWrite();
         uploadFile uploadFile = new uploadFile(driver);
-        uploadFile.uploadAction();
         cleanUp cleanUp = new cleanUp(driver);
+
+        downloadFile.actionDownload();
+        modifyFile.actionWrite();
+        uploadFile.uploadAction();
         cleanUp.cleanUpAction();
     }
 }
