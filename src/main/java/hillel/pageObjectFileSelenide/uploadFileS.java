@@ -7,8 +7,8 @@ public class uploadFileS  {
 
     public void uploadFile(){
         open("https://the-internet.herokuapp.com/upload");
-    File file = new File("loremipsum.txt");
-    $x("//input[@id='file-upload']").uploadFile(file);
-    $(By.cssSelector("input.button")).click();
-        System.out.println("  uploading is done");
+        File file = new File("loremipsum.txt");
+         $x("//input[@id='file-upload']").uploadFile(file);
+         $(By.cssSelector("input.button")).click();
+         System.out.println("  uploading is done");
 }}
