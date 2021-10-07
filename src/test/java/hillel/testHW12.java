@@ -1,13 +1,8 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+package hillel;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Test;
 
 
 public class testHW12 extends BaseTest {
