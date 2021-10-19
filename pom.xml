@@ -27,7 +27,7 @@
                     -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                 </argLine>
                 <systemPropertyVariables>
-                    ${project.build.directory}/allure-results
+                    ${project.build.directory}\allure-results
                 </systemPropertyVariables>
             </configuration>
         </plugin>
