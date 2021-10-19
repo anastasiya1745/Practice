@@ -16,6 +16,8 @@
     <orderEntry type="library" name="Maven: io.qameta.allure:allure-model:2.15.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-testng:2.15.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-test-filter:2.15.0" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure-attachments:2.15.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.freemarker:freemarker:2.3.31" level="project" />
     <orderEntry type="library" name="Maven: org.testng:testng:7.4.0" level="project" />
     <orderEntry type="library" name="Maven: com.beust:jcommander:1.78" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery:3.5.1" level="project" />
