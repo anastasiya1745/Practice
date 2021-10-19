@@ -23,7 +23,7 @@ hs_err_pid*
 
 /.idea/
 /repo_learn_hillel/
-*.iml
+*.Project.iml
 /out/
 /Practice/
 *.md
