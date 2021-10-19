@@ -21,7 +21,6 @@
                     <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                 </suiteXmlFiles>
                 <systemPropertyVariables>
-                    <propertyName/>
                     <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                 </systemPropertyVariables>
                 <argLine>
