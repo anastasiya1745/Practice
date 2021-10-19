@@ -28,7 +28,7 @@ public class testPOHW21 extends BaseTest{
                 .setUsername("tomsmith")
                 .setPassword("SuperSecretPassword!")
                 .clickOnSubmit()
-                .readMsgPostiveLogin("You logged into a secure area!")
+                .readMsgPostiveLogin("You logged into a secure area! ")
                 .clickOnLogout();
     }
     @Test
