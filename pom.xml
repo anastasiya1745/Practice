@@ -60,7 +60,11 @@
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-attachments</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
     <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
