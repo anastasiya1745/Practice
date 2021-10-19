@@ -4,6 +4,7 @@
     <test name="Test">
         <classes>
             <class name="hillel.testHW12"/>
+            <class name="hillel.testPOHW21"/>
         </classes>
     </test>
 </suite>
