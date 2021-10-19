@@ -36,7 +36,7 @@ public class BaseTest {
     }
     @AfterMethod
     public void takeScreenshot(ITestResult result) throws IOException {
-        if (!result.isSuccess()){
+        if (result.isSuccess()){
            File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
            saveScreenshot(Files.readAllBytes(screenshot.toPath()));
         }
