@@ -23,15 +23,42 @@
                 <systemPropertyVariables>
                     <propertyName/>
                 </systemPropertyVariables>
+                <argLine>
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                </argLine>
+                <systemPropertyVariables>
+                    ${project.build.directory}/allure-results
+                </systemPropertyVariables>
             </configuration>
         </plugin>
+
     </plugins>
     </build>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <aspectj.version>1.8.10</aspectj.version>
+        <allure.version>2.15.0</allure.version>
     </properties>
     <dependencies>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-testng</artifactId>
+                <version>${allure.version}</version>
+                <scope>test</scope>
+            </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
     <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
@@ -81,5 +108,6 @@
         </dependency>
 
     </dependencies>
+
 
 </project>
