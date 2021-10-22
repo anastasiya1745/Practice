@@ -1,4 +1,4 @@
-package hillel.finaProject;
+package hillel.finaProjectFreelance;
 
 
 import io.qameta.allure.Step;

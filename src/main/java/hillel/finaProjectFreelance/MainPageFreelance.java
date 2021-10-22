@@ -1,7 +1,6 @@
-package hillel.finaProject;
+package hillel.finaProjectFreelance;
 
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;

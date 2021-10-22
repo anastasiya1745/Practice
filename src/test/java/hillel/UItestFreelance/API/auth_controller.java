@@ -1,6 +1,6 @@
-package hillel.TestFreelance.API;
+package hillel.UItestFreelance.API;
 
-import hillel.finaProject.restAPI.ApiFreelance;
+import hillel.finaProjectFreelance.restAPI.ApiFreelance;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
