@@ -20,12 +20,12 @@ public class job_controller {
     }
     @Test
     public void deleteJob() throws IOException {
-        new ApiFreelance().deleteJob(2);
+        new ApiFreelance().deleteJob(559);
     }
 
     @Test
     public void getJobId() throws IOException {
-        new ApiFreelance().getJobId(2);
+        new ApiFreelance().getJobId(559);
     }
 
 
