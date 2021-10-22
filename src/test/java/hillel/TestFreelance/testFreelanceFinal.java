@@ -9,13 +9,14 @@ import static com.codeborne.selenide.Selenide.open;
 public class testFreelanceFinal extends BaseTestFreelance{
 
     @Test
-    public void testRegisterUser(String username, String password){
+    public void testRegisterUser(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavRegisterPageFreelance()
-                .setInfo(username,"anastasiya","chaika",password,"123456789")
-                .signIn();}
+                .setInfo("achaika","anastasiya","chaika","123456789","123456789")
+                .signIn();
+    }
 
     @Test
     public void testModifyUserInfo(){
@@ -23,12 +24,12 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("rer")
+                .inputUsername("achaika")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
-                .modifyInfo("Lizy", "Okta")
-                .assertAction("Lizy Okta");
+                .modifyInfo("anastasiya", "Okta")
+                .assertAction("anastasiya Okta");
     }
 
     @Test
@@ -37,7 +38,7 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("rer")
+                .inputUsername("achaika")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
@@ -50,12 +51,12 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("rer")
+                .inputUsername("achaika")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickView("Job2")
                 .addComment("this is awesome job")
-                .assertComment("rer","this is awesome job");
+                .assertComment("achaika","this is awesome job");
 }
     @Test
     public void testViewJobandDeleteOne(){
@@ -63,11 +64,11 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("rer")
+                .inputUsername("achaika")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
-                .assertQuantityOfComments("0","Job2")
+                .assertQuantityOfComments("1","Job2")
                 .removeJob("Job2");
 
 
