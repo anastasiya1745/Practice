@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class testFreelanceFinal extends BaseTestFreelance{
 
     @Test
-    public void RegisterUser(){
+    public void aregisterUser(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
@@ -19,7 +19,7 @@ public class testFreelanceFinal extends BaseTestFreelance{
     }
 
     @Test
-    public void ModifyUserInfo(){
+    public void bmodifyUserInfo(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
@@ -29,11 +29,12 @@ public class testFreelanceFinal extends BaseTestFreelance{
                 .clickOnLogin()
                 .clickOnProfile()
                 .modifyInfo("anastasiya", "Okta")
-                .assertAction("anastasiya Okta");
+                .assertAction("anastasiya Okta")
+                .clickOnLogout();
     }
 
     @Test
-    public void CreationNewJob(){
+    public void creationNewJob(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
@@ -43,10 +44,11 @@ public class testFreelanceFinal extends BaseTestFreelance{
                 .clickOnLogin()
                 .clickOnProfile()
                 .createNewJob("JobAnastasiia","Job description","123")
-                .assertCreation("JobAnastasiia");
+                .assertCreation("JobAnastasiia")
+                .clickOnLogout();
     }
     @Test
-    public void AddingComment(){
+    public void daddingComment(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
@@ -56,10 +58,11 @@ public class testFreelanceFinal extends BaseTestFreelance{
                 .clickOnLogin()
                 .clickView("JobAnastasiia")
                 .addComment("this is awesome job")
-                .assertComment("achaika","this is awesome job");
+                .assertComment("achaika","this is awesome job")
+                .clickOnLogout();
 }
     @Test
-    public void ViewJobandDeleteOne(){
+    public void viewJobandDeleteOne(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
@@ -69,7 +72,8 @@ public class testFreelanceFinal extends BaseTestFreelance{
                 .clickOnLogin()
                 .clickOnProfile()
                 .assertQuantityOfComments("1","JobAnastasiia")
-                .removeJob("JobAnastasiia");
+                .removeJob("JobAnastasiia")
+                .clickOnLogout();
 
 
 }
