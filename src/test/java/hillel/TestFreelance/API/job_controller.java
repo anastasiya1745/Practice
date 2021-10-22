@@ -16,16 +16,16 @@ public class job_controller {
 
     @Test
     public void createJob() throws IOException {
-        new ApiFreelance().createNewJob();
+        new ApiFreelance().createNewJob("Job2","Job2","1234","achaika_sd");
     }
     @Test
     public void deleteJob() throws IOException {
-        new ApiFreelance().deleteJob(559);
+        new ApiFreelance().deleteJob(562,"Job2","Job2","1234","achaika_sd","0");
     }
 
     @Test
     public void getJobId() throws IOException {
-        new ApiFreelance().getJobId(559);
+        new ApiFreelance().getJobId(562);
     }
 
 

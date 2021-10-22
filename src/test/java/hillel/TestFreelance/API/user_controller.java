@@ -9,7 +9,7 @@ public class user_controller {
 
     @Test
     public void updateInfo() throws IOException {
-        new ApiFreelance().updateInfo();
+        new ApiFreelance().updateInfo(322,"achaika_sd","Anastasiia","Chaika");
     }
 
     @Test
@@ -19,6 +19,6 @@ public class user_controller {
 
     @Test
     public void getUserId() throws IOException {
-        new ApiFreelance().getUserId(313);
+        new ApiFreelance().getUserId(322);
     }
 }

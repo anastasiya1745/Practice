@@ -14,16 +14,11 @@ public class ApiFreelance {
     private Response response;
 
     private String baseurl = "https://freelance.lsrv.in.ua";
-    private String token ="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzMTMiLCJuYW1lIjpudWxsLCJpZCI6IjMxMyIsInVzZXJuYW1lIjoiY2hhaWthQW5hc3Rhc2l5YSIsImxhc3RuYW1lIjpudWxsLCJpYXQiOjE2MzQ5MDkxMTMsImV4cCI6MTYzNDkxMjcxM30.dT9HJ0mIocRClvzUalAvkU20Id5UyRO7mfg28Jo3Y7T9SUMrwBQdB7m2LTATo_cDPTSeyFQWZXfApghT5vZdQA";
-    private String username = "chaikaAnastasiya";
-    private String password = "123456789";
-    private String id = "313";
-
-
+    private String token ="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzMjIiLCJuYW1lIjpudWxsLCJpZCI6IjMyMiIsInVzZXJuYW1lIjoiYWNoYWlrYV9zZCIsImxhc3RuYW1lIjpudWxsLCJpYXQiOjE2MzQ5MTI3NDYsImV4cCI6MTYzNDkxNjM0Nn0.b0n_cjDemwDJSn7rTlfzbtGCYq7_iGzINeb0vdOfiS32ieMYfSB1kZuWENnUBgmz4lLdTyqR2eq-dajlv5PuMw";
 
     //<auth-controller>
     @Step ("Sign in")
-    public void signIn() throws IOException {
+    public void signIn(String username, String password) throws IOException {
         String body = "{\n" +
                 "  \"username\": \""+username+"\",\n" +
                 "  \"password\": \""+password+"\"\n" +
@@ -40,12 +35,10 @@ public class ApiFreelance {
         response = call.execute();
         System.out.println(response.body().string());
 
-
-
     }
 
     @Step ("Sign up")
-    public void signUp() throws IOException {
+    public void signUp(String username, String password) throws IOException {
         String body = "{\n" +
                 "  \"username\": \""+username+"\",\n" +
                 "  \"password\": \""+password+"\",\n" +
@@ -63,22 +56,20 @@ public class ApiFreelance {
         response = call.execute();
         System.out.println(response.body().string());
 
-
-
     }
     //</auth-controller>
     //<user-controller>
     @Step ("Update user info")
-    public void updateInfo() throws IOException {
+    public void updateInfo(int id, String username,String name,String lastname) throws IOException {
         String body = "{\n" +
                 "  \"id\": "+id+",\n" +
                 "  \"username\": \""+username+"\",\n" +
-                "  \"name\": \"Anastasiuuua\",\n" +
-                "  \"lastname\": \"Chaika\"\n" +
+                "  \"name\": \""+name+"\",\n" +
+                "  \"lastname\": \""+lastname+"\"\n" +
                 "}";
+
         requestBody = RequestBody.create(body.getBytes(StandardCharsets.UTF_8));
         client = new OkHttpClient();
-
         request = new Request.Builder()
                 .url(baseurl+"/api/user/update")
                 .header("Authorization","Bearer "+ token)
@@ -89,8 +80,6 @@ public class ApiFreelance {
         Call call = client.newCall(request);
         response = call.execute();
         System.out.println(response.body().string());
-
-
 
     }
 
@@ -104,7 +93,6 @@ public class ApiFreelance {
                 .header("Authorization","Bearer "+ token)
                 .header("Content-Type", "application/json")
                 .build();
-
         Call call = client.newCall(request);
         response = call.execute();
         System.out.println(response.body().string());
@@ -113,12 +101,13 @@ public class ApiFreelance {
     @Step ("get user by userID")
     public void getUserId(int userId) throws IOException {
         String url = "/api/user/" + userId;
+        client = new OkHttpClient();
         request = new Request.Builder()
                 .url(baseurl + url)
                 .header("Authorization","Bearer "+ token)
                 .header("Content-Type", "application/json")
                 .build();
-        client = new OkHttpClient();
+
         Call call= client.newCall(request);
         response = call.execute();
         System.out.println(response.body().string());
@@ -135,19 +124,18 @@ public class ApiFreelance {
                 .header("Authorization","Bearer "+ token)
                 .header("Content-Type", "application/json")
                 .build();
-
         Call call = client.newCall(request);
         response = call.execute();
         System.out.println(response.body().string());
 
     }
     @Step ("create a new job")
-    public void createNewJob() throws IOException {
+    public void createNewJob(String title, String description, String price, String username) throws IOException {
         String body = "{\n" +
                 "  \"id\": 0,\n" +
-                "  \"title\": \"Job2\",\n" +
-                "  \"description\": \"Job2\",\n" +
-                "  \"price\": 123,\n" +
+                "  \"title\": \""+title+"\",\n" +
+                "  \"description\": \""+description+"\",\n" +
+                "  \"price\": "+price+",\n" +
                 "  \"user\": \""+username+"\",\n" +
                 "  \"noOfComments\": 0\n" +
                 "}";
@@ -159,23 +147,20 @@ public class ApiFreelance {
                 .header("Content-Type", "application/json")
                 .post(requestBody)
                 .build();
-
         Call call = client.newCall(request);
         response = call.execute();
         System.out.println(response.body().string());
-
-
 
     }
     @Step ("get job by userID")
     public void getJobId(int jobId) throws IOException {
         String url = "/api/job/" + jobId;
+        client = new OkHttpClient();
         request = new Request.Builder()
                 .url(baseurl + url)
                 .header("Authorization","Bearer "+ token)
                 .header("Content-Type", "application/json")
                 .build();
-        client = new OkHttpClient();
         Call call= client.newCall(request);
         response = call.execute();
         System.out.println(response.body().string());
@@ -183,15 +168,15 @@ public class ApiFreelance {
     }
 
     @Step ("delete job by id")
-    public void deleteJob(int jobID) throws IOException {
+    public void deleteJob(int jobID,String title, String description, String price, String username,String noOfComments ) throws IOException {
         String url = "/api/job/delete/" + jobID;
         String body = "{\n" +
                 "  \"id\": "+jobID+",\n" +
-                "  \"title\": \"Job2\",\n" +
-                "  \"description\": \"Job2\",\n" +
-                "  \"price\": 123,\n" +
+                "  \"title\": \""+title+"\",\n" +
+                "  \"description\": \""+description+"\",\n" +
+                "  \"price\": "+price+",\n" +
                 "  \"user\": \""+username+"\",\n" +
-                "  \"noOfComments\": 0\n" +
+                "  \"noOfComments\": "+noOfComments+"\n" +
                 "}";
         requestBody = RequestBody.create(body.getBytes(StandardCharsets.UTF_8));
         request = new Request.Builder()
@@ -208,8 +193,6 @@ public class ApiFreelance {
         if (response.code() != 200){
             throw new IOException();
         }
-
-
 
     }
     //</job-controller>
@@ -229,10 +212,10 @@ public class ApiFreelance {
 
     }
     @Step ("add a new comment")
-    public void addComment(int jobId) throws IOException {
+    public void addComment(int jobId, String message,String username) throws IOException {
         String body = "{\n" +
                 "  \"id\": 0,\n" +
-                "  \"message\": \"some comments\",\n" +
+                "  \"message\": \""+message+"\",\n" +
                 "  \"username\": \""+username+"\",\n" +
                 "  \"commentDate\": \"string\"\n" +
                 "}";
@@ -245,11 +228,9 @@ public class ApiFreelance {
                 .header("Content-Type", "application/json")
                 .post(requestBody)
                 .build();
-
         Call call = client.newCall(request);
         response = call.execute();
         System.out.println(response.body().string());
-
 
     }
     //</comment_controller>
@@ -294,7 +275,6 @@ public class ApiFreelance {
                 .header("Content-Type", "application/json")
                 .post(requestBody)
                 .build();
-
         Call call = client.newCall(request);
         response = call.execute();
         System.out.println(response.body().string());

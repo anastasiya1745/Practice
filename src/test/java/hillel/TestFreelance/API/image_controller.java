@@ -14,7 +14,7 @@ public class image_controller {
     }
     @Test
     public void getImageByUserId() throws IOException {
-        new ApiFreelance().getImageByUserID(313);
+        new ApiFreelance().getImageByUserID(322);
     }
     @Test
     public void uploadImage() throws IOException {
