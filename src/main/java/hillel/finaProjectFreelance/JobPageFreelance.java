@@ -1,4 +1,4 @@
-package hillel.finaProject;
+package hillel.finaProjectFreelance;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;

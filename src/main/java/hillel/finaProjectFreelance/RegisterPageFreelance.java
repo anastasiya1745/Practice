@@ -1,6 +1,4 @@
-package hillel.finaProject;
-
-import com.codeborne.selenide.Condition;
+package hillel.finaProjectFreelance;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;

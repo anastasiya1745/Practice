@@ -1,4 +1,4 @@
-package hillel.finaProject.restAPI;
+package hillel.finaProjectFreelance.restAPI;
 
 import io.qameta.allure.Step;
 import okhttp3.*;

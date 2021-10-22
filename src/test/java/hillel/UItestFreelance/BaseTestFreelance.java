@@ -1,6 +1,5 @@
-package hillel.TestFreelance;
+package hillel.UItestFreelance;
 
-import com.codeborne.selenide.SelenideDriver;
 import hillel.DriverSingleton;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;

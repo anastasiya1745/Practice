@@ -1,7 +1,6 @@
-package hillel.TestFreelance;
+package hillel.UItestFreelance;
 
-import hillel.BaseTest;
-import hillel.finaProject.HomePageFreelance;
+import hillel.finaProjectFreelance.HomePageFreelance;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.open;

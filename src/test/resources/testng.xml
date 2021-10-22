@@ -3,7 +3,7 @@
 <suite name="Suite1" verbose="1">
     <test name="Test">
         <classes>
-            <class name="hillel.TestFreelance.testFreelanceFinal"/>
+            <class name="hillel.UItestFreelance.testFreelanceFinal"/>
         </classes>
     </test>
 </suite>
