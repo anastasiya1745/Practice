@@ -9,22 +9,22 @@ import static com.codeborne.selenide.Selenide.open;
 public class testFreelanceFinal extends BaseTestFreelance{
 
     @Test
-    public void testRegisterUser(){
+    public void test1RegisterUser(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavRegisterPageFreelance()
-                .setInfo("achaika_test","anastasiya","chaika","123456789","123456789")
+                .setInfo("achaika_t","anastasiya","chaika","123456789","123456789")
                 .signIn();
     }
 
     @Test
-    public void testModifyUserInfo(){
+    public void test2ModifyUserInfo(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("achaika_test")
+                .inputUsername("achaika_t")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
@@ -33,12 +33,12 @@ public class testFreelanceFinal extends BaseTestFreelance{
     }
 
     @Test
-    public void testCreationNewJob(){
+    public void test3CreationNewJob(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("achaika_test")
+                .inputUsername("achaika_t")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
@@ -46,12 +46,12 @@ public class testFreelanceFinal extends BaseTestFreelance{
                 .assertCreation("Job2");
     }
     @Test
-    public void testAddingComment(){
+    public void test4AddingComment(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("achaika_test")
+                .inputUsername("achaika_t")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickView("Job2")
@@ -59,12 +59,12 @@ public class testFreelanceFinal extends BaseTestFreelance{
                 .assertComment("achaika","this is awesome job");
 }
     @Test
-    public void testViewJobandDeleteOne(){
+    public void test5ViewJobandDeleteOne(){
         open("https://freelance.lsrv.in.ua/home");
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("achaika_test")
+                .inputUsername("achaika_t")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
