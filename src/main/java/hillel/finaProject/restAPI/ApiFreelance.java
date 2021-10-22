@@ -14,7 +14,7 @@ public class ApiFreelance {
     private Response response;
 
     private String baseurl = "https://freelance.lsrv.in.ua";
-    private String token ="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzMTMiLCJuYW1lIjpudWxsLCJpZCI6IjMxMyIsInVzZXJuYW1lIjoiY2hhaWthQW5hc3Rhc2l5YSIsImxhc3RuYW1lIjpudWxsLCJpYXQiOjE2MzQ5MDQ4MzUsImV4cCI6MTYzNDkwODQzNX0.Gkzi_rlfKijWBBf3hSrrThwkSnZFJPmGRYh-0ljD_wHc6F9Ebk0eE7-hziHfI-cmlyhGR2AVqS38lPc4h2Qn1A";
+    private String token ="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzMTMiLCJuYW1lIjpudWxsLCJpZCI6IjMxMyIsInVzZXJuYW1lIjoiY2hhaWthQW5hc3Rhc2l5YSIsImxhc3RuYW1lIjpudWxsLCJpYXQiOjE2MzQ5MDkxMTMsImV4cCI6MTYzNDkxMjcxM30.dT9HJ0mIocRClvzUalAvkU20Id5UyRO7mfg28Jo3Y7T9SUMrwBQdB7m2LTATo_cDPTSeyFQWZXfApghT5vZdQA";
     private String username = "chaikaAnastasiya";
     private String password = "123456789";
     private String id = "313";
@@ -232,11 +232,9 @@ public class ApiFreelance {
     public void addComment(int jobId) throws IOException {
         String body = "{\n" +
                 "  \"id\": 0,\n" +
-                "  \"title\": \"Job2\",\n" +
-                "  \"description\": \"Job2\",\n" +
-                "  \"price\": 123,\n" +
-                "  \"user\": \""+username+"\",\n" +
-                "  \"noOfComments\": 0\n" +
+                "  \"message\": \"some comments\",\n" +
+                "  \"username\": \""+username+"\",\n" +
+                "  \"commentDate\": \"string\"\n" +
                 "}";
         requestBody = RequestBody.create(body.getBytes(StandardCharsets.UTF_8));
         client = new OkHttpClient();
@@ -255,4 +253,50 @@ public class ApiFreelance {
 
     }
     //</comment_controller>
-}
+    //<image_controller>
+    @Step ("get Profile image")
+    public void getProfileImage() throws IOException {
+
+        request = new Request.Builder()
+                .url(baseurl + "/api/image/profile")
+                .header("Authorization","Bearer "+ token)
+                .header("Content-Type", "application/json")
+                .build();
+        client = new OkHttpClient();
+        Call call= client.newCall(request);
+        response = call.execute();
+        System.out.println(response.code());
+
+    }
+    @Step ("get Profile image by user ID")
+    public void getImageByUserID(int id) throws IOException {
+        String url = "/api/image/"+id;
+        request = new Request.Builder()
+                .url(baseurl + url)
+                .header("Authorization","Bearer "+ token)
+                .header("Content-Type", "application/json")
+                .build();
+        client = new OkHttpClient();
+        Call call= client.newCall(request);
+        response = call.execute();
+        System.out.println(response.code());
+
+    }
+    @Step ("upload image")
+    public void uploadImage(String path) throws IOException {
+        String body = "{\n" +
+                "  \"file\": "+path+"\"\"\n" + "}";
+        requestBody = RequestBody.create(body.getBytes(StandardCharsets.UTF_8));
+        client = new OkHttpClient();
+        request = new Request.Builder()
+                .url(baseurl+"/api/image/upload")
+                .header("Authorization","Bearer "+ token)
+                .header("Content-Type", "application/json")
+                .post(requestBody)
+                .build();
+
+        Call call = client.newCall(request);
+        response = call.execute();
+        System.out.println(response.body().string());
+    //</image_controller>
+}}

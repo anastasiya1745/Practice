@@ -10,11 +10,11 @@ public class comment_controller {
 
     @Test
     public void getComments() throws IOException {
-        new ApiFreelance().getComments(2);
+        new ApiFreelance().getComments(560);
     }
     @Test
     public void addComment() throws IOException {
-        new ApiFreelance().addComment(2);
+        new ApiFreelance().addComment(560);
     }
 
 }
