@@ -23,4 +23,10 @@ public class JobPageFreelance {
                 .contains(comment);
         return this;
     }
+    @Step("Logout")
+    public HomePageFreelance clickOnLogout(){
+        $x("//button[@mattooltip='Profile']").click();
+        $x("//button[contains(@class,'mat-menu-item')][text()='Profile']").click();
+        return new HomePageFreelance();
+    }
 }
