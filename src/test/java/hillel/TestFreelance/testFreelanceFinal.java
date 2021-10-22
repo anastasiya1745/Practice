@@ -14,7 +14,7 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavRegisterPageFreelance()
-                .setInfo("achaika_t","anastasiya","chaika","123456789","123456789")
+                .setInfo("achaikatestt","anastasiya","chaika","123456789","123456789")
                 .signIn();
     }
 
@@ -24,7 +24,7 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("achaika_t")
+                .inputUsername("achaikatestt")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
@@ -38,7 +38,7 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("achaika_t")
+                .inputUsername("achaikatestt")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
@@ -51,7 +51,7 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("achaika_t")
+                .inputUsername("achaikatestt")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickView("Job2")
@@ -64,7 +64,7 @@ public class testFreelanceFinal extends BaseTestFreelance{
         HomePageFreelance homePageFreelance = new HomePageFreelance();
         homePageFreelance
                 .toNavLoginPageFreelance()
-                .inputUsername("achaika_t")
+                .inputUsername("achaikatestt")
                 .inputPassword("123456789")
                 .clickOnLogin()
                 .clickOnProfile()
